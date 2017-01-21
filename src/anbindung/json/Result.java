@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Result {
 
-@SerializedName("inputSensor")
+@SerializedName("sensorInput")
 @Expose
 private List<Input> inputSensor = new ArrayList<Input>();
 

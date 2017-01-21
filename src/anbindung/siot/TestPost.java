@@ -33,7 +33,7 @@ public class TestPost {
         JSONObject object = new JSONObject();
         JSONArray array = new JSONArray();
         try {
-            object.put("inputSensor", s);
+            object.put("sensorInput", s);
             jsonString = String.valueOf(array.put(object));
         } catch (JSONException e) {
             // TODO Auto-generated catch block
