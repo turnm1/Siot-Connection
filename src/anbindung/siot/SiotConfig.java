@@ -16,11 +16,13 @@ public class SiotConfig {
     private String URL = "https://siot.net:17730";
     private String licence = "B30F-6A7F-295C-4FAE-A0EB-27BD-AA4B-82B7";
     
-    // ***EDIT*** PLS set your SIOT-Center-Input/Output Informations here in
+    // ***EDIT*** PLS set your SIOT-Center-Input Informations here in
     private String name = "InputTest";
-    private String inputKey = "2dd37cfe-2a72-8ba2-9615-a170d288c394";
-    private String outputKey = "2dd37cfe-2a72-8ba2-9615-a170d288c394";
-    private String inOut = "input";
+    private String guid = "2dd37cfe-2a72-8ba2-9615-a170d288c394";
+    private String type = "input";
+    private String valueType = "string";
+    private String jsonMapping = "";
+    private String file = "";
     private boolean message = true;
     private String desc = "test Input Sensor 1";
     private String dataTyp = "json";
@@ -54,18 +56,30 @@ public class SiotConfig {
     }
 
     public String getInOut() {
-        return inOut;
+        return type;
     }
 
-    public String getInputKey() {
-        inputKey = inputKey.replaceAll("-","");
-        return inputKey;
+    public String getValueType() {
+        return valueType;
     }
-    
-    public String getOutputKey() {
-        outputKey = outputKey.replaceAll("-","");
-        return outputKey;
+
+    public String getType() {
+        return type;
     }
+
+    public String getJsonMapping() {
+        return jsonMapping;
+    }
+
+    public String getGuid() {
+        guid = guid.replaceAll("-","");
+        return guid;
+    }
+
+    public String getFile() {
+        return file;
+    }
+
 
     public String getName() {
         return name;
@@ -92,15 +106,31 @@ public class SiotConfig {
     }
 
     public void setInOut(String inOut) {
-        this.inOut = inOut;
+        this.type = inOut;
     }
 
     public void setInputKey(String inputKey) {
-        this.inputKey = inputKey;
+        this.guid = inputKey;
     }
-    
-    public void setOutputKey(String outputKey) {
-        this.outputKey = outputKey;
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+
+    public void setGuid(String guid) {
+        this.guid = guid;
+    }
+
+    public void setJsonMapping(String jsonMapping) {
+        this.jsonMapping = jsonMapping;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setValueType(String valueType) {
+        this.valueType = valueType;
     }
 
     public void setName(String name) {

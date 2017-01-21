@@ -23,13 +23,13 @@ public class SiotCommands {
     // getters
     public String getConfig() {     
         // https://siot.net:12935/getconfig?centerUID=A751-6354-E157-4A05-BDAB-77BB-35E5-2657&sensorUID=65206DBD5B5B465EACBE8BFD8DE92285
-        config = sc.getURL()+"/getconfig?centerUID="+sc.getLicence()+"&sensorUID="+sc.getOutputKey();
+        config = sc.getURL()+"/getconfig?centerUID="+sc.getLicence()+"&sensorUID="+sc.getGuid();
         return config;
     }
 
     public String getData() {
         // https://siot.net:12935/getdata?centerUID=A751-6354-E157-4A05-BDAB-77BB-35E5-2657&sensorUID=65206DBD5B5B465EACBE8BFD8DE92285
-        data = sc.getURL()+"/getdata?centerUID="+sc.getLicence()+"&sensorUID="+sc.getOutputKey();
+        data = sc.getURL()+"/getdata?centerUID="+sc.getLicence()+"&sensorUID="+sc.getGuid();
         return data;
     }
 
@@ -37,20 +37,20 @@ public class SiotCommands {
         String x = "1480955604216"; // Zeit Stempel 1
         String y = "1480955604217"; // Zeit Stempel 2
         // https://siot.net:12280/getdatafrom?centerUID=C62D-0483-2154-4BF9-9B95-F70F-6F9F-65FA&sensorUID=6106eb4e-4e89-49b1-97b8-a10140551eb7&from=1480955604216&to1480955604217
-        dataBetween = sc.getURL()+"/getdatafrom?centerUID="+sc.getLicence()+"&sensorUID="+sc.getOutputKey()+"&from="+x+"&to"+y;
+        dataBetween = sc.getURL()+"/getdatafrom?centerUID="+sc.getLicence()+"&sensorUID="+sc.getGuid()+"&from="+x+"&to"+y;
         return dataBetween;
     }
 
     public String getDataFrom() {
         // https://siot.net:12280/getdatafrom?centerUID=C62D-0483-2154-4BF9-9B95-F70F-6F9F-65FA&sensorUID=6106eb4e-4e89-49b1-97b8-a10140551eb7&from=1480955604216
         String x = "1480955604216"; // Zeit Stempel
-        dataFrom = sc.getURL()+"/getdatafrom?centerUID="+sc.getLicence()+"&sensorUID="+sc.getOutputKey()+"&from="+x;
+        dataFrom = sc.getURL()+"/getdatafrom?centerUID="+sc.getLicence()+"&sensorUID="+sc.getGuid()+"&from="+x;
         return dataFrom;
     }
 
     public String getManifest() {
         // https://siot.net:12935/getmanifest?sensorUID=65206DBD5B5B465EACBE8BFD8DE92285
-        manifest = sc.getURL()+"/getmanifest?sensorUID="+sc.getOutputKey();
+        manifest = sc.getURL()+"/getmanifest?sensorUID="+sc.getGuid();
         return manifest;
     }
 
@@ -62,7 +62,7 @@ public class SiotCommands {
 
     public String getnData() {
         // https://siot.net:12935/getdatalastn?centerUID=A751-6354-E157-4A05-BDAB-77BB-35E5-2657&sensorUID=65206DBD5B5B465EACBE8BFD8DE92285&count=10
-        nData = sc.getURL()+"/getdatalastn?centerUID="+sc.getLicence()+"&sensorUID="+sc.getInputKey()+"&count=10";
+        nData = sc.getURL()+"/getdatalastn?centerUID="+sc.getLicence()+"&sensorUID="+sc.getGuid()+"&count=10";
         return nData;
     }
     
@@ -71,14 +71,14 @@ public class SiotCommands {
         // https://siot.net:12935/mqtt/request?topic=siot/CNF/A751-6354-E157-4A05-BDAB-77BB-35E5-2657/65206DBD5B5B465EACBE8BFD8DE92285&message={"storage":"db"}
         String storage = "storage";
         String db = "db";
-        config = sc.getURL()+"/mqtt/request?topic=siot/CNF/"+sc.getLicence()+"/"+sc.getInputKey()+"&message={"+storage+":"+db+"}";
+        config = sc.getURL()+"/mqtt/request?topic=siot/CNF/"+sc.getLicence()+"/"+sc.getGuid()+"&message={"+storage+":"+db+"}";
         this.config = config;
     }
      
     public String setData(String data) {
         
         // message=true&topic=siot/DAT/C62D-0483-2154-4BF9-9B95-F70F-6F9F-65FA/0000-0000-0000-000A-0015-BC00-2F00-09CA
-        String setData = "message="+data+"&topic=siot/DAT/"+sc.getLicence()+"/"+sc.getInputKey();
+        String setData = "message="+data+"&topic=siot/DAT/"+sc.getLicence()+"/"+sc.getGuid();
         return setData;
     }
 
